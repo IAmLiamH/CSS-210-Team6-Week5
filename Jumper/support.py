@@ -1,5 +1,5 @@
 import random
-from typing import final
+
 
 class word:
 
@@ -23,8 +23,10 @@ class word:
         guessed_letters variable should be a list of capital letters that the player has guessed.
 
         Output example: list, ["E", "X", "_", "M", "P", "_", "E"]
+        Args:
+            self (word): an instance of word
+            guessed_letters (list): A list of the guessed letters so far.
         """
-
 
         final_print = []
         for i in self.word:
@@ -43,12 +45,13 @@ class TerminalService():
     
     The responsibility of the TerminalService is to provide input and output operations for the terminal"""
     
-    def __init__(self):
+    def read_text(self, prompt):
+        return input(prompt)
+
+    def write_text(self, text):
+        print(text)
         
-        pass
-
     def clear_and_print_screen(self):
-
         pass
 
 

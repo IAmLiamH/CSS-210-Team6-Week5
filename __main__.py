@@ -1,6 +1,9 @@
-from Jumper.game import skydiver
+from Jumper.assets import Director
 
-skydiver = skydiver()
+director = Director()
+director.start_game()
+
+# skydiver = skydiver()
 
 
 
