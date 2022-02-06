@@ -5,7 +5,7 @@ class word:
 
 
     def __init__(self):
-        with open('CSS-210-Team6-Week5/Jumper/words.txt') as f:
+        with open("Jumper\words.txt") as f:
             lines = f.readlines()
 
             temp_list = []
