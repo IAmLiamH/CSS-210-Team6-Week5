@@ -4,7 +4,7 @@ from Jumper.support import TerminalService
 class JumperGraphic():
     
    
-    def display_jumper_graphic(self, parachute_damage = 0):
+    def display_jumper_graphic(self, parachute_damage):
         """Contains the jumper graphics of losing the parachute, 0 being undamaged and 4 being a fail state. """
         if parachute_damage == 0:
             # Unharmed parachute [0]
@@ -48,7 +48,7 @@ class Director():
         
         while self._is_playing:
             playerGuess = self._get_inputs()
-            self._do_updates(playerGuess)
+            GuessedLetters = self._do_updates(playerGuess)
             self._do_outputs()
             
     def _get_inputs(self):
@@ -68,12 +68,12 @@ class Director():
             self (Director): An instance of Director.
         """
         guessedLetters = list(playerGuess.upper())
-        self._word.formulate_printable_word(guessedLetters)
+        return self._word.formulate_printable_word(guessedLetters)
         
     
-    def _do_outputs(self):
-        """Displays jumper graphic, and """
-        self._jumper.display_jumper_graphic(0)
+    def _do_outputs(self, guessed_letters, parachute_damage = 0):
+        """Displays jumper graphic, and a bank of guessed letters. """
+        self._jumper.display_jumper_graphic(parachute_damage)
     
     
 # class Jumper():
