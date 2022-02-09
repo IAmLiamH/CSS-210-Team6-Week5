@@ -1,23 +1,24 @@
-class skydiver:
+class Skydiver:
 
     def __init__(self):
 
           
-        cartoon = self.create_cartoon()
+        cartoons = self.__create_cartoon()
  
-        while self.is_a_draw(cartoon):
-            self.display_cartoon(cartoon)
-            self.make_move(cartoon)
+        while self.__is_a_draw(cartoons):
+            self.__display_cartoon(cartoons)
+            self.__make_move(cartoons)
         
-        self.display_cartoon(cartoon)
-        print("You have no more parachute the game is over!") 
+        self.__display_cartoon(cartoons)
+        print("You have no more parachute the game is over!")
+        print() 
 
-    def create_cartoon(self):
+    def __create_cartoon(self):
         cartoon = [" ___", "/", "___", "\ ", "\ ", "/ ", "\ ", "/ ", "O", "/", "|", "\ ", "/", "\ ", "^^^^^^^"]
     
         return cartoon
 
-    def display_cartoon(self, cartoon):
+    def __display_cartoon(self, cartoon):
         print()
         print(f" {cartoon[0]}")
         print(f" {cartoon[1]}{cartoon[2]}{cartoon[3]}")
@@ -30,14 +31,14 @@ class skydiver:
         print(f"{cartoon[14]}")
         print()
         
-    def is_a_draw(self, cartoon):
+    def __is_a_draw(self, cartoon):
         
         if cartoon[8] == "x" :
             return False
         return True 
 
-        
-    def make_move(self, cartoon):
+    # 
+    def __make_move(self, cartoon):
         
         puzzle = int(input("provisional entry puzzle (1-9): "))
         
